@@ -21,3 +21,11 @@
     text-wrap: balance;
   }
 }
+
+.font-unbouned {
+  font-family: var(--font-unbounded);
+}
+
+.font-onest {
+  font-family: var(--font-onest);
+}
