@@ -4,7 +4,7 @@ import Image from "next/image";
 import { HiLocationMarker } from "react-icons/hi";
 import { Squeeze as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import Link from "next/link";
 
@@ -17,9 +17,17 @@ const variants = {
 export default function HeaderMobile(props: any) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+
+  useEffect(() => {
+    if (isOpen === true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
   return (
     <>
-      <header className="bg-gradient-to-b md:hidden items-center px-5 py-5 from-black via-black/40 fixed w-full flex justify-between">
+      <header className="bg-gradient-to-b z-40 md:hidden items-center px-5 pt-5 pb-10 from-black/80 via-black/40 fixed w-full flex justify-between">
         <button className="w-12 h-12 backdrop-blur-xl bg-white/30 rounded-full flex justify-center items-center">
           <HiLocationMarker size="1.2rem" />
         </button>
@@ -52,7 +60,7 @@ export default function HeaderMobile(props: any) {
         onAnimationComplete={() => setIsAnimationComplete(!isOpen)}
         className={`${
           isAnimationComplete && !isOpen ? "hidden" : "!block"
-        } w-screen p-5 h-screen fixed top-0 left-0 bg-black text-white`}>
+        } w-screen p-5 h-screen fixed top-0 z-50 left-0 bg-black text-white`}>
         <MobileMenu setIsOpen={setIsOpen} data={props.data} />
       </motion.div>
     </>
