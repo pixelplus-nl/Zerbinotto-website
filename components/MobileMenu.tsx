@@ -7,14 +7,14 @@ import { SocialIcon } from "react-social-icons";
 
 export default function MobileMenu(props: any) {
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between h-full pb-20">
       <div className="flex justify-between">
         <Image
           src="/submark.svg"
           width={300}
           height={300}
           alt="submark logo"
-          className="w-14"
+          className="w-12"
         />
         <TfiClose onClick={() => props.setIsOpen(false)} size={20} />
       </div>
@@ -33,7 +33,7 @@ export default function MobileMenu(props: any) {
         })}
       </ul>
 
-      <ul className="font-thin flex-col flex gap-5">
+      <ul className="font-thin text-sm flex-col flex gap-5">
         <li>
           <p>Muntstraat 7 </p>
           <Link className="flex items-center gap-2" href="#">
@@ -67,7 +67,7 @@ export default function MobileMenu(props: any) {
               bgColor="#EAE8E2"
               fgColor="#000"
               url="https://www.instagram.com/zerbinottobrandstore/"
-              className="!w-8 !h-8"
+              className="!w-7 !h-7"
             />
             <Link
               className="flex items-center"
@@ -85,7 +85,7 @@ export default function MobileMenu(props: any) {
               bgColor="#EAE8E2"
               fgColor="#000"
               url="https://www.facebook.com/brandstore.zerbinotto/"
-              className="!w-8 !h-8"
+              className="!w-7 !h-7"
             />
             <Link
               className="flex items-center "
