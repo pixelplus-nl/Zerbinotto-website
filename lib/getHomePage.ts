@@ -40,6 +40,7 @@ export const getHomePage = async () => {
             }
           }
           brandSlider{
+            brandname
             img{
               sourceUrl
             }

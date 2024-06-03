@@ -1,6 +1,6 @@
 import { fetchAPI } from "./base";
 
-export const getHomePage = async () => {
+export const getNewsPosts = async () => {
   const data = await fetchAPI(
     `query NewsPosts {
   posts {
@@ -22,6 +22,7 @@ export const getHomePage = async () => {
           }
         }
         title
+        slug
       }
     }
   }
