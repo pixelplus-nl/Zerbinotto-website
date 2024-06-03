@@ -29,3 +29,44 @@
 .font-onest {
   font-family: var(--font-onest);
 }
+
+.contentBlock a {
+  text-decoration: underline;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.contentBlock a:hover {
+  text-decoration: none;
+}
+
+.swiper-custom-bullet {
+  background-color: #b4b4b4 !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  display: block;
+  border-radius: 9999px;
+  height: 10px !important;
+  margin: 0 0.5rem 0 0.5rem !important;
+}
+
+.swiper-custom-bullet-active {
+  background-color: #fff !important;
+  position: relative;
+}
+
+.swiper-custom-bullet-active::after {
+  content: " ";
+  position: absolute;
+  border: 1px solid #fff;
+  border-radius: 99999px;
+  padding: 0.7rem;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: -1;
+}
