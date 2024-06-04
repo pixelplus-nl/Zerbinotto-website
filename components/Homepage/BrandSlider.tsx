@@ -13,6 +13,7 @@ import {
 } from "react-icons/hi2";
 import { unbounded } from "@/app/fonts";
 import Link from "next/link";
+import Button from "../button";
 
 export default function BrandSlider(props: any) {
   const sliderRef = useRef<any | null>(null);
@@ -29,13 +30,45 @@ export default function BrandSlider(props: any) {
 
   return (
     <section className="pt-12">
-      <div className="h-96 absolute flex items-center w-full">
+      <div className="h-96 md:h-[40rem] lg:h-screen absolute flex items-center w-full">
         <div className="z-20 relative flex justify-between w-full px-5">
-          <button onClick={handlePrev}>
-            <HiOutlineArrowLongLeft size="2rem" color="#fff" />
+          <button
+            className="relative group overflow-hidden flex justify-start items-center"
+            onClick={handlePrev}>
+            <HiOutlineArrowLongLeft
+              size="2rem"
+              className="md:size-14 absolute -translate-y-10 duration-700 transition-all group-hover:translate-y-0"
+              color="#C14C23"
+            />
+            <HiOutlineArrowLongLeft
+              size="2rem"
+              className="md:size-14 absolute group-hover:translate-y-10 duration-700"
+              color="#fff"
+            />
+            <HiOutlineArrowLongLeft
+              size="2rem"
+              className="md:size-14 invisible group-hover:translate-y-10 duration-700"
+              color="#fff"
+            />
           </button>
-          <button onClick={handleNext}>
-            <HiOutlineArrowLongRight size="2rem" color="#fff" />
+          <button
+            className="relative group overflow-hidden  flex justify-end items-center"
+            onClick={handleNext}>
+            <HiOutlineArrowLongRight
+              size="2rem"
+              className="md:size-14 absolute -translate-y-10 duration-700 transition-all group-hover:translate-y-0"
+              color="#C14C23"
+            />
+            <HiOutlineArrowLongRight
+              size="2rem"
+              className="md:size-14 absolute group-hover:translate-y-10 duration-700"
+              color="#fff"
+            />
+            <HiOutlineArrowLongRight
+              size="2rem"
+              className="md:size-14 invisible  group-hover:translate-y-10 duration-700"
+              color="#fff"
+            />
           </button>
         </div>
         <div className="containerForBullets flex absolute justify-center z-20 !bottom-5 "></div>
@@ -54,12 +87,12 @@ export default function BrandSlider(props: any) {
           delay: 3000,
           disableOnInteraction: true,
         }}
-        modules={[Pagination, Autoplay]}
+        modules={[Pagination]}
         className="mySwiper">
         {props.homepage.brandSlider.map((brand: any, index: number) => {
           return (
             <SwiperSlide key={index}>
-              <div className="h-96 relative">
+              <div className="h-96 lg:h-screen md:h-[40rem] relative">
                 <Image
                   src={brand.img.sourceUrl}
                   fill
@@ -75,32 +108,32 @@ export default function BrandSlider(props: any) {
                 />
               </div>
 
-              <div className="px-20 bg-white flex flex-col justify-center h-[30rem]">
-                <div className="relative mb-10 z-20">
-                  <Image
-                    src={brand.logo.sourceUrl}
-                    width={300}
-                    height={300}
-                    placeholder="blur"
-                    blurDataURL="data:..."
-                    priority
-                    alt=""
+              <div className="px-20 drop-shadow-xl lg:p-10 lg:z-30 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-[10%] z-20 bg-white flex flex-col justify-center h-[30rem] md:h-[35rem] lg:h-auto lg:py-20">
+                <div className="max-w-sm mx-auto">
+                  <div className="relative flex justify-center lg:w-60 mx-auto mb-10 z-20">
+                    <Image
+                      src={brand.logo.sourceUrl}
+                      width={300}
+                      height={300}
+                      placeholder="blur"
+                      blurDataURL="data:..."
+                      priority
+                      alt=""
+                    />
+                  </div>
+                  <h3
+                    className={`text-xl ${unbounded.className} font-semibold`}>
+                    {brand.brandname}
+                  </h3>
+                  <div className="mb-10"
+                    dangerouslySetInnerHTML={{ __html: brand.paragraph }}></div>
+                  <Button
+                    color="#707070"
+                    homepage={props.homepage}
+                    buttonText={brand.ctaButton.buttontext}
+                    buttonLink={brand.ctaButton.buttonlink}
                   />
                 </div>
-                <h3 className={`text-xl ${unbounded.className} font-semibold`}>
-                  {brand.brandname}
-                </h3>
-                <div
-                  dangerouslySetInnerHTML={{ __html: brand.paragraph }}></div>
-
-                <Link
-                  className={`py-5 mt-5 flex ${unbounded.className} uppercase rounded-3xl justify-center text-white bg-[#707070] rounded-3-xl`}
-                  href={brand.ctaButton.buttonlink.url}>
-                  {brand.ctaButton.buttontext}
-                  <span>
-                    <HiOutlineArrowLongRight size="1.5rem" />
-                  </span>
-                </Link>
               </div>
             </SwiperSlide>
           );
