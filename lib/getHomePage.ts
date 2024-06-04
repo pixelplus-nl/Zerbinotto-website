@@ -19,11 +19,8 @@ export const getHomePage = async () => {
           heroLinkSmall{
             url
           }
-          imgCol{
-            imgHor{
-              sourceUrl
-            }
-            imgVer{
+          imgcol {
+            img{
               sourceUrl
             }
           }
@@ -55,6 +52,7 @@ export const getHomePage = async () => {
               buttontext
             }
           }
+          footeralert
         }
       }
     }

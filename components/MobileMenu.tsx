@@ -7,20 +7,34 @@ import { SocialIcon } from "react-social-icons";
 
 export default function MobileMenu(props: any) {
   return (
-    <div className="flex flex-col justify-between h-full pb-20">
+    <div className="flex flex-col justify-between h-full pb-20 lg:pb-0">
       <div className="flex justify-between">
         <Image
           src="/submark.svg"
           width={300}
           height={300}
           alt="submark logo"
-          className="w-12"
+          className="w-12 md:w-20 lg:w-12"
         />
-        <TfiClose onClick={() => props.setIsOpen(false)} size={20} />
+
+        <div className="group [perspective:1000px]">
+          <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <TfiClose
+              onClick={() => props.setIsOpen(false)}
+              size={20}
+              className="md:size-10 backface-invis "
+            />
+            <TfiClose
+              onClick={() => props.setIsOpen(false)}
+              size={20}
+              className="md:size-10 absolute inset-0 [transform:rotateY(180deg)] opacity-50 [backface-visibility:hidden]"
+            />
+          </div>
+        </div>
       </div>
 
       <ul
-        className={`w-full ${unbounded.className} text-3xl flex flex-col gap-3`}>
+        className={`w-full ${unbounded.className} text-3xl md:text-5xl lg:text-4xl flex flex-col gap-3 md:gap-5 lg:gap-3`}>
         {props.data.map((item: any, index: number) => {
           return (
             <li className="flex items-center" key={index}>
@@ -33,7 +47,7 @@ export default function MobileMenu(props: any) {
         })}
       </ul>
 
-      <ul className="font-thin text-sm flex-col flex gap-5">
+      <ul className="font-thin text-sm md:text-2xl lg:text-lg flex-col flex gap-5">
         <li>
           <p>Muntstraat 7 </p>
           <Link className="flex items-center gap-2" href="#">
@@ -67,7 +81,7 @@ export default function MobileMenu(props: any) {
               bgColor="#EAE8E2"
               fgColor="#000"
               url="https://www.instagram.com/zerbinottobrandstore/"
-              className="!w-7 !h-7"
+              className="!w-7 !h-7 md:!w-9 md:!h-9"
             />
             <Link
               className="flex items-center"
@@ -85,7 +99,7 @@ export default function MobileMenu(props: any) {
               bgColor="#EAE8E2"
               fgColor="#000"
               url="https://www.facebook.com/brandstore.zerbinotto/"
-              className="!w-7 !h-7"
+              className="!w-7 !h-7 md:!w-9 md:!h-9"
             />
             <Link
               className="flex items-center "
