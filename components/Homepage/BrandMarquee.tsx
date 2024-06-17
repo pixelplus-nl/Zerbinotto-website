@@ -11,8 +11,6 @@ export default function BrandMarquee(props: any) {
                 <Image
                   src={brand.logo.sourceUrl}
                   fill
-                  placeholder="blur"
-                  blurDataURL="data:..."
                   priority
                   sizes="100vw"
                   style={{
@@ -33,8 +31,6 @@ export default function BrandMarquee(props: any) {
                 <Image
                   src={brand.logo.sourceUrl}
                   fill
-                  placeholder="blur"
-                  blurDataURL="data:..."
                   priority
                   sizes="100vw"
                   style={{

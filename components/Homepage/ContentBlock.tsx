@@ -25,7 +25,7 @@ export default function ContentBlock(props: any) {
           dangerouslySetInnerHTML={{ __html: props.homepage.conBlock.content }}
         />
         <Button
-          color="#C14C23"
+          color="bg-[#C14C23] ring-[#C14C23]"
           homepage={props.homepage}
           buttonText={props.homepage.conBlock.buttonText}
           buttonLink={props.homepage.conBlock.buttonLink}
