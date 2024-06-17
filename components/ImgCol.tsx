@@ -11,16 +11,17 @@ export default function ImgCol(props: any) {
     offset: ["start start", "end end"],
   });
 
-  const scales = [4, 3, 2, 3, 2];
+  const scales = [4, 3, 2, 3, 2].map((scale) =>
+    useTransform(scrollYProgress, [0, 1], [1, scale])
+  );
 
   return (
     <section
       ref={container}
-      className="relative h-[300vh] py-12 md:py-20 lg:py-28">
+      className="relative h-[300vh] pb-12 md:pb-20 lg:pb-28">
       <div className="sticky overflow-hidden top-0 h-screen">
         {props.homepage.imgcol.map((src: any, index: any) => {
-          const scaleFactor = scales[index];
-          const scale = useTransform(scrollYProgress, [0, 1], [1, scaleFactor]);
+          const scale = scales[index];
 
           const isMiddle = index === 0;
           const customMiddleClasses = isMiddle ? " w-[25vw] h-[25vh]" : "";

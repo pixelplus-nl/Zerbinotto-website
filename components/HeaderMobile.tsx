@@ -28,10 +28,10 @@ export default function HeaderMobile(props: any) {
   }, [isOpen]);
   return (
     <>
-      <header className="bg-gradient-to-b z-40 xl:hidden items-center px-5 md:px-10 pt-5 md:pb-5 from-black/80 via-black/40 md:via-black/50 fixed w-full flex justify-between">
+      <header className="bg-gradient-to-b z-40 xl:hidden items-center px-5 md:px-10 pt-5 md:pb-5 from-black/80 via-black/50 md:via-black/50 fixed w-full flex justify-between">
         <div className="group [perspective:1000px]">
           <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <button className="w-12 h-12 md:w-14 md:h-14 backdrop-blur-xl backface-invis bg-white/30 md:bg-white/50 rounded-full flex justify-center items-center">
+            <button className="w-12 h-12 md:w-14 md:h-14 backdrop-blur-xl backface-invis bg-white/50  rounded-full flex justify-center items-center">
               <HiLocationMarker size="3rem" className="w-6" />
             </button>
             <button className="flip-button-back absolute inset-0  w-12 h-12 md:w-14 md:h-14 backdrop-blur-xl bg-black/30 md:bg-black/50 rounded-full flex justify-center items-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -56,7 +56,7 @@ export default function HeaderMobile(props: any) {
 
         <div className="group [perspective:1000px]">
           <div className="relative h-full w-full transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <button className="w-12 h-12 md:w-14 md:h-14 backface-invis backdrop-blur-xl flex justify-center items-center  bg-white/30 md:bg-white/50 rounded-full">
+            <button className="w-12 h-12 md:w-14 md:h-14 backface-invis backdrop-blur-xl flex justify-center items-center  bg-white/50  rounded-full">
               <Hamburger
                 size={22}
                 color="#000"
