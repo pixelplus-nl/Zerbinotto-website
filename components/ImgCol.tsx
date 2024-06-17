@@ -1,16 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-export default function imgCol(props: any) {
+export default function ImgCol(props: any) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -29,41 +23,43 @@ export default function imgCol(props: any) {
           const scale = useTransform(scrollYProgress, [0, 1], [1, scaleFactor]);
 
           const isMiddle = index === 0;
-          const customMiddleClasses = isMiddle ? "z-30" : "";
+          const customMiddleClasses = isMiddle ? " w-[25vw] h-[25vh]" : "";
 
           const isFirstChild = index === 1;
           const customFirstClasses = isFirstChild
-            ? "left-[5vw] top-[3vh] w-[35vw] h-[30vh]"
+            ? "w-[30vw] h-[30vh] left-[30vw] top-[10vh] lg:left-[28vw] lg:top-[11vh] lg:w-[25vw] lg:h-[42vh]"
             : "";
 
           const isSecondChild = index === 2;
           const customSecondClasses = isSecondChild
-            ? "right-[7vw] top-[1vh] w-[35vw] h-[30vh]"
+            ? " w-[55vw] h-[15vh] top-[22vh] right-[17vw] lg:right-[12vw] lg:top-[26vh] lg:w-[40vw] lg:h-[23vh]"
             : "";
 
           const isThirdChild = index === 3;
           const customThirdClasses = isThirdChild
-            ? "right-[6vw] bottom-3 w-[35vw] h-[30vh]"
+            ? "lg:right-[24vw] right-[30vw] lg:bottom-[15vh] bottom-[15vh] w-[30vw] lg:w-[20vw] h-[30vh] lg:h-[40vh]"
             : "";
 
           const isFourthChild = index === 4;
           const customFourthClasses = isFourthChild
-            ? "left-[2vw] bottom-3 w-[35vw] h-[30vh]"
+            ? "left-[17vw] bottom-[22vh] w-[55vw] h-[15vh]    lg:left-[8vw] lg:bottom-[25vh] lg:w-[35vw] lg:h-[20vh]"
             : "";
 
           return (
-            <div
+            <motion.div
+              style={{ scale }}
               key={index}
-              className={`w-full flex justify-center items-center h-full absolute ${
-                customFirstClasses ||
-                customSecondClasses ||
-                customThirdClasses ||
-                customFourthClasses ||
-                customMiddleClasses
+              className={` flex justify-center w-full h-full items-center  absolute ${
+                index === 0 ? "z-20" : ""
               }`}>
-              <motion.div
-                style={{ scale }}
-                className="w-[25vw] h-[25vh] relative ">
+              <div
+                className={` ${
+                  customFirstClasses ||
+                  customSecondClasses ||
+                  customThirdClasses ||
+                  customFourthClasses ||
+                  customMiddleClasses
+                } relative`}>
                 <Image
                   src={src.img.sourceUrl}
                   fill
@@ -77,8 +73,8 @@ export default function imgCol(props: any) {
                   }}
                   alt={""}
                 />
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           );
         })}
       </div>

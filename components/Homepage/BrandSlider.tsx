@@ -125,10 +125,11 @@ export default function BrandSlider(props: any) {
                     className={`text-xl ${unbounded.className} font-semibold`}>
                     {brand.brandname}
                   </h3>
-                  <div className="mb-10"
+                  <div
+                    className="mb-10"
                     dangerouslySetInnerHTML={{ __html: brand.paragraph }}></div>
                   <Button
-                    color="#707070"
+                    color="bg-[#707070] ring-[#707070]"
                     homepage={props.homepage}
                     buttonText={brand.ctaButton.buttontext}
                     buttonLink={brand.ctaButton.buttonlink}
