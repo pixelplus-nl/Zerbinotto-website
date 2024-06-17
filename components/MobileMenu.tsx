@@ -37,11 +37,11 @@ export default function MobileMenu(props: any) {
         className={`w-full ${unbounded.className} text-3xl md:text-5xl lg:text-4xl flex flex-col gap-3 md:gap-5 lg:gap-3`}>
         {props.data.map((item: any, index: number) => {
           return (
-            <li className="flex items-center" key={index}>
+            <li className="flex items-center group" key={index}>
               <Link className="flex-1" href={item.uri}>
                 {item.label}
               </Link>
-              <HiOutlineArrowLongRight />
+              <HiOutlineArrowLongRight className="mr-2 transition-all group-hover:mr-0" />
             </li>
           );
         })}
@@ -50,33 +50,33 @@ export default function MobileMenu(props: any) {
       <ul className="font-thin text-sm md:text-2xl lg:text-lg flex-col flex gap-5">
         <li>
           <p>Muntstraat 7 </p>
-          <Link className="flex items-center gap-2" href="#">
+          <Link className="flex items-center gap-2 group" href="#">
             6211 EG Maatricht{" "}
             <HiOutlineArrowLongRight
-              className="rotate-[315deg]"
+              className="rotate-[315deg] group-hover:rotate-[360deg] transition-all"
               size="1.5rem"
             />
           </Link>
         </li>
         <li>
-          <Link className="flex" href="tel:+310433258199">
+          <Link className="flex group" href="tel:+310433258199">
             +31 (0)43 325 81 99{" "}
             <HiOutlineArrowLongRight
-              className="rotate-[315deg]"
+              className="rotate-[315deg] group-hover:rotate-[360deg] transition-all"
               size="1.5rem"
             />
           </Link>
-          <Link className="flex" href="mailto:info@zerbinotto.nl">
+          <Link className="flex group" href="mailto:info@zerbinotto.nl">
             info@zerbinotto.nl
             <HiOutlineArrowLongRight
-              className="rotate-[315deg]"
+              className="rotate-[315deg] group-hover:rotate-[360deg] transition-all"
               size="1.5rem"
             />
           </Link>
         </li>
 
         <li className="flex flex-col gap-2 font-thin">
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 group items-center">
             <SocialIcon
               bgColor="#EAE8E2"
               fgColor="#000"
@@ -88,13 +88,13 @@ export default function MobileMenu(props: any) {
               href="https://www.instagram.com/zerbinottobrandstore/">
               Instagram{" "}
               <HiOutlineArrowLongRight
-                className="rotate-[315deg]"
+                className="rotate-[315deg] group-hover:rotate-[360deg] transition-all"
                 size="1.5rem"
               />
             </Link>
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 group items-center">
             <SocialIcon
               bgColor="#EAE8E2"
               fgColor="#000"
@@ -106,7 +106,7 @@ export default function MobileMenu(props: any) {
               href="https://www.facebook.com/brandstore.zerbinotto/">
               Facebook{" "}
               <HiOutlineArrowLongRight
-                className="rotate-[315deg]"
+                className="rotate-[315deg] group-hover:rotate-[360deg] transition-all"
                 size="1.5rem"
               />
             </Link>
