@@ -44,10 +44,10 @@ export default function NewsBlock(props: any) {
           );
         })}
       </ol>
-      <div className="group flex justify-end overflow-hidden relative">
+      <div className="group flex justify-end mt-10 md:mt-0 overflow-hidden relative">
         <div className="relative w-full">
           <Link
-            className={`absolute h-full w-full top-0 right-0 flex items-center transition-all duration-700 -translate-y-10 group-hover:translate-y-0 md:justify-end gap-3 text-black uppercase ${unbounded.className}`}
+            className={`absolute justify-end h-full w-full top-0 right-0 flex items-center transition-all duration-700 -translate-y-10 group-hover:translate-y-0 md:justify-end gap-3 text-black uppercase ${unbounded.className}`}
             href={""}>
             Alle nieuwsitems
             <span>
@@ -55,7 +55,7 @@ export default function NewsBlock(props: any) {
             </span>
           </Link>
           <Link
-            className={`absolute h-full w-full top-0 right-0 flex items-center transition-all duration-700 group-hover:translate-y-10 md:justify-end gap-3 text-white uppercase ${unbounded.className}`}
+            className={`absolute justify-end h-full w-full top-0 right-0 flex items-center transition-all duration-700 group-hover:translate-y-10 md:justify-end gap-3 text-white uppercase ${unbounded.className}`}
             href={""}>
             Alle nieuwsitems
             <span>
