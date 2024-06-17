@@ -2,10 +2,10 @@ import ContentBlock from "@/components/Homepage/ContentBlock";
 import BrandMarquee from "@/components/Homepage/BrandMarquee";
 import BrandSlider from "@/components/Homepage/BrandSlider";
 import Hero from "@/components/Homepage/Hero";
-import ImgCol from "@/components/ImgCol";
 import { getHomePage } from "@/lib/getHomePage";
 import NewsBlock from "@/components/Homepage/NewsBlock";
 import { getNewsPosts } from "@/lib/getNewsPosts";
+import ParallaxImgCollection from "@/components/ParallaxImgCollection";
 
 export default async function Home() {
   const data = await getHomePage();
@@ -17,7 +17,7 @@ export default async function Home() {
     <>
       <Hero homepage={homepage} />
       <BrandMarquee homepage={homepage} />
-      <ImgCol homepage={homepage} />
+      <ParallaxImgCollection homepage={homepage} />
       <ContentBlock homepage={homepage} />
       <BrandSlider homepage={homepage} />
       <NewsBlock news={news} />
