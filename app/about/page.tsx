@@ -1,15 +1,14 @@
 import { getAboutPage } from "@/lib/getAboutPage";
 import Image from "next/image";
 import { unbounded } from "../fonts";
-import { useEffect, useState } from "react";
 import { fetchPlaceReviews } from "@/lib/reviews";
+import { MdStar } from "react-icons/md";
+import Link from "next/link";
 
 export default async function page() {
   const data = await getAboutPage();
 
-  const reviews = await fetchPlaceReviews("ChIJlZnqV7jpwEcRjjAXmNzMxHE");
-
-  console.log(reviews);
+  const reviews = await fetchPlaceReviews("ChIJy6-hV7jpwEcRW3rDZ-7Oe6Q");
 
   return (
     <main>
@@ -65,6 +64,40 @@ export default async function page() {
           dangerouslySetInnerHTML={{ __html: data.page.about.content3 }}
         />
       </section>
+      <div className="bg-[#363636] flex justify-between  text-white px-5 md:px-10 py-10 ">
+        <div className="flex gap-5 items-center">
+          <p className=" flex text-lg items-center gap-3">
+            {reviews.result.rating}
+            <span className="flex gap-1">
+              {[...Array(Math.floor(reviews.result.rating) + 1)].map(
+                (_, index) => (
+                  <MdStar key={index} color="#FFBA00" />
+                )
+              )}
+            </span>
+          </p>
+          <p className="font-thin">
+            Gebaseerd op{" "}
+            <Link
+              className="underline hover:opacity-50 transition-all"
+              href="https://www.google.com/search?q=zerbinotto+reviews&rlz=1C5CHFA_enNL899NL899&oq=zerbinotto+reviews+&gs_lcrp=EgZjaHJvbWUyCggAEEUYFhgeGDkyCggBEAAYgAQYogQyCggCEAAYgAQYogQyCggDEAAYgAQYogQyCggEEAAYgAQYogQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg2MDIxajBqNKgCALACAQ&sourceid=chrome&ie=UTF-8#lrd=0x47c0e9b857a1afcb:0xa47bceee67c37a5b,1,,,,">
+              {reviews.result.user_ratings_total}
+            </Link>{" "}
+            beoordelingen
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <p className="font-thin">powered by</p>
+          <Image
+            src="/googleLogo.svg"
+            width={200}
+            height={200}
+            className="w-24"
+            alt="google"
+          />
+        </div>
+      </div>
     </main>
   );
 }
