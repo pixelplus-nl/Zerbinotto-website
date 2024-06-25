@@ -11,7 +11,7 @@ export default async function Footer() {
   return (
     <footer className="bg-black px-5 md:px-10 pt-32 pb-10 text-white">
       <Image
-        src="logo.svg"
+        src="/logo.svg"
         width={300}
         height={300}
         placeholder="blur"
@@ -126,7 +126,7 @@ export default async function Footer() {
         </div>
 
         <Image
-          src="submark.svg"
+          src="/submark.svg"
           width={175}
           height={175}
           alt="submark"
