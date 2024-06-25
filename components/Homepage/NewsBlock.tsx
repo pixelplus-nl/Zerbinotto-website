@@ -17,7 +17,7 @@ export default function NewsBlock(props: any) {
         {props.news.slice(0, 2).map((post: any, index: number) => {
           return (
             <li className="mb-10 last:mb-0 md:w-80" key={index}>
-              <Link href={`nieuws/${post.node.slug}`} className="block group">
+              <Link href={`news/${post.node.slug}`} className="block group">
                 <div className="w-full relative overflow-hidden h-52">
                   <Image
                     src={post.node.news.imgOverview.sourceUrl}
