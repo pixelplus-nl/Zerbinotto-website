@@ -41,7 +41,6 @@ export default async function page() {
         />
         <div className="md:grid grid-cols-2 gap-10">
           {news.posts.edges.map((item: any, index: number) => {
-            console.log(item);
             return (
               <Link
                 className="group block
@@ -49,7 +48,7 @@ export default async function page() {
                 href={item.node.uri}>
                 <div className="relative overflow-hidden h-72 mb-3">
                   <Image
-                    className="group-hover:scale-110 transition-all"
+                    className="group-hover:scale-110 duration-500 transition-all"
                     src={item.node.news.imgOverview.sourceUrl}
                     fill
                     placeholder="blur"
@@ -64,7 +63,7 @@ export default async function page() {
                   />
                 </div>
                 <div className="max-w-[20rem]">
-                  <label className="after:content-arrowRightIcon after:ml-2 after:transition-all after:group-hover:translate-x-3 after:inline-block text-lg">
+                  <label className="after:content-arrowRightIcon after:duration-500 after:ml-2 after:transition-all after:group-hover:translate-x-3 after:inline-block text-lg">
                     {item.node.title}
                   </label>
                 </div>

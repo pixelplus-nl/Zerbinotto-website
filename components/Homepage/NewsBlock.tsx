@@ -33,12 +33,11 @@ export default function NewsBlock(props: any) {
                     alt={""}
                   />
                 </div>
-                <p className="flex items-end pt-5">
-                  {post.node.title}
-                  <span className="mr-3 group-hover:mr-0 transition-all">
-                    <HiOutlineArrowLongRight size="1.5rem" />
-                  </span>
-                </p>
+                <div className="max-w-[20rem]">
+                  <label className="after:content-arrowRightIcon after:duration-500 after:ml-2 after:transition-all after:group-hover:translate-x-3 after:inline-block text-lg">
+                    {post.node.title}
+                  </label>
+                </div>
               </Link>
             </li>
           );
