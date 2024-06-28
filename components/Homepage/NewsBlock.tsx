@@ -5,7 +5,7 @@ import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export default function NewsBlock(props: any) {
   return (
-    <section className="py-20 px-5 md:px-10 bg-[#AAB7AA]">
+    <section className="py-20 px-5 md:px-10 lg:px-16 bg-[#AAB7AA]">
       <h2 className={`uppercase text-4xl mb-5 md:mb-10 ${unbounded.className}`}>
         <span className="font-bold">
           NEW IN

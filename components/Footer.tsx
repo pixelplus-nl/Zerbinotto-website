@@ -9,7 +9,7 @@ export default async function Footer() {
   const data = await getHomePage();
 
   return (
-    <footer className="bg-black px-5 md:px-10 pt-32 pb-10 text-white">
+    <footer className="bg-black px-5 md:px-10 lg:px-16 pt-32 pb-10 text-white">
       <Image
         src="/logo.svg"
         width={300}

@@ -1,6 +1,6 @@
 import { getAboutPage } from "@/lib/getAboutPage";
 import Image from "next/image";
-import { unbounded } from "../fonts";
+import { unbounded } from "@/app/fonts";
 import { fetchPlaceReviews } from "@/lib/reviews";
 import { MdStar } from "react-icons/md";
 import Link from "next/link";
@@ -29,8 +29,7 @@ export default async function page() {
           />
         </div>
         <div className="absolute bottom-0 bg-gradient-to-t from-black/70 via-black/50  w-full h-36"></div>
-        <div
-          className={`absolute text-4xl md:text-5xl p-5 md:p-10  ${unbounded.className} text-white`}>
+        <div className="absolute text-4xl md:text-5xl p-5 md:p-10 lg:px-16  [&>h2]:font-unbounded text-white">
           <h1 className="uppercase">{data.page.about.title}</h1>
           <h2 className="font-thin uppercase">{data.page.about.subtitle}</h2>
         </div>
@@ -40,7 +39,7 @@ export default async function page() {
           <p>{data.page.about.motto}</p>
         </div>
         <div
-          className={`[&>h2]:${unbounded.className} [&>h2]:text-3xl mb-10 max-w-2xl [&>h2]:mb-3 [&>h2]:font-semibold [&>h2]:uppercase`}
+          className="[&>h2]:font-unbounded [&>h2]:text-3xl mb-10 max-w-2xl [&>h2]:mb-3 [&>h2]:font-semibold [&>h2]:uppercase"
           dangerouslySetInnerHTML={{ __html: data.page.about.content1 }}
         />
 
@@ -54,17 +53,17 @@ export default async function page() {
 
         <div className="flex w-full justify-end ">
           <div
-            className={`[&>h2]:${unbounded.className} my-10 mr-20 [&>h2]:text-3xl mb-10 max-w-2xl [&>h2]:mb-3 [&>h2]:font-semibold [&>h2]:uppercase`}
+            className="[&>h2]:font-unbounded my-10 mr-20 [&>h2]:text-3xl mb-10 max-w-2xl [&>h2]:mb-3 [&>h2]:font-semibold [&>h2]:uppercase"
             dangerouslySetInnerHTML={{ __html: data.page.about.content2 }}
           />
         </div>
 
         <div
-          className={`[&>h2]:${unbounded.className} my-10 [&>h2]:text-3xl mb-10 max-w-2xl [&>h2]:mb-3 [&>h2]:font-semibold [&>h2]:uppercase`}
+          className="[&>h2]:font-unbounded my-10 [&>h2]:text-3xl mb-10 max-w-2xl [&>h2]:mb-3 [&>h2]:font-semibold [&>h2]:uppercase"
           dangerouslySetInnerHTML={{ __html: data.page.about.content3 }}
         />
       </section>
-      <div className="bg-[#363636] flex justify-between  text-white px-5 md:px-10 py-10 ">
+      <div className="bg-[#363636] flex justify-between  text-white px-5 md:px-10 py-10 lg:px-16">
         <div className="flex gap-5 items-center">
           <p className=" flex text-lg items-center gap-3">
             {reviews.result.rating}

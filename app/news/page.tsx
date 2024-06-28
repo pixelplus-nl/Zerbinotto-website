@@ -1,6 +1,6 @@
 import { getNewsPage, getPosts } from "@/lib/getNewsPage";
 import Image from "next/image";
-import { unbounded } from "../fonts";
+import { unbounded } from "@/app/fonts";
 import Link from "next/link";
 
 export default async function page() {
@@ -27,7 +27,7 @@ export default async function page() {
         </div>
         <div className="absolute bottom-0 bg-gradient-to-t from-black/70 via-black/50  w-full h-36"></div>
         <div
-          className={`absolute text-4xl md:text-5xl p-5 md:p-10  ${unbounded.className} text-white`}>
+          className={`absolute text-4xl md:text-5xl p-5 md:p-10 lg:px-16 ${unbounded.className} text-white`}>
           <h1 className="uppercase">{data.page.news_overview.title}</h1>
           <h2 className="font-thin uppercase">
             {data.page.news_overview.subtitle}
@@ -43,6 +43,7 @@ export default async function page() {
           {news.posts.edges.map((item: any, index: number) => {
             return (
               <Link
+                key={index}
                 className="group block
                  mb-10 last:mb-0"
                 href={item.node.uri}>

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        unbounded: ["Unbounded", "sans-serif"],
+      },
       content: {
         arrowRightIcon: 'url("../public/arrowLongRight.svg")',
       },
@@ -17,8 +20,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        marquee: "marquee 25s linear infinite",
-        marquee2: "marquee2 25s linear infinite",
+        marquee: "marquee 2000s linear infinite",
+        marquee2: "marquee2 2000s linear infinite",
       },
       keyframes: {
         marquee: {

@@ -16,11 +16,6 @@ query brands {
         }
       }
       heroText
-      brandsLogos {
-        logo {
-          sourceUrl
-        }
-      }
       content
       heroImg {
         sourceUrl

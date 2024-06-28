@@ -1,5 +1,5 @@
 import ContentBlock from "@/components/Homepage/ContentBlock";
-import BrandMarquee from "@/components/Homepage/BrandMarquee";
+import BrandMarquee from "@/components/BrandMarquee";
 import BrandSlider from "@/components/Homepage/BrandSlider";
 import Hero from "@/components/Homepage/Hero";
 import { getHomePage } from "@/lib/getHomePage";
