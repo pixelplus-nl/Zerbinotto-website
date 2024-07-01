@@ -30,7 +30,7 @@ export default function BrandMarquee(props: { homepage: { brands: Brand[] } }) {
   return (
     <section className="relative py-12 md:py-20 lg:py-28 w-screen">
       <div className="relative flex overflow-x-hidden">
-        <ul className="flex items-center animate-marquee whitespace-nowrap">
+        <ul className="flex items-center animate-marqueeMob md:animate-marqueeDesk duration-75 whitespace-nowrap">
           {items.map((brand: any, index: number) => {
             return (
               <li key={index} className="w-20 md:w-32 mx-6 relative h-20">

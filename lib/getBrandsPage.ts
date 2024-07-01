@@ -21,6 +21,7 @@ query brands {
         sourceUrl
       }
       brands{
+        brandName
         img{
           sourceUrl
         }
