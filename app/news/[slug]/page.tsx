@@ -29,7 +29,7 @@ export async function generateMetadata({
 
 export default async function page({ params }: PageProps) {
   const getData = await getNewsPost(params.slug);
-  console.log(getData.post.news.cta);
+
 
   return (
     <section className="max-w-5xl lg:py-32 pb-20 relative mx-auto">

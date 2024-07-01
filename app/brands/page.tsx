@@ -10,7 +10,6 @@ export default async function page() {
   const data = await getBrandsPage();
   const dataBrandMarquee = data.page.brandsOverview;
 
-  console.log(data.page.brandsOverview.cta.buttonLink.url);
 
   return (
     <main>
